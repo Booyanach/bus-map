@@ -1,0 +1,9 @@
+<div>
+    <div ng-if="!control.routeList.length" class="loader"></div>
+    <div ng-if="control.routeList.length" ng-repeat="route in control.routeList track by route.tag" class="btn"
+        ng-style="{borderLeftColor: '#' + route.color}"
+        ng-class="{selected: control.checkSelected(route.tag)}"
+        ng-click="control.selectRoute(route.tag)">
+            <span ng-bind="route.title"></span>
+    </div>
+</div>
