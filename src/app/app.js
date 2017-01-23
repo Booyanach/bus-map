@@ -1,25 +1,31 @@
 import angular from 'angular';
+import map from './map/map.directive';
+import MapCtrl from './map/map.controller';
+import control from './control/control.directive';
+import ControlCtrl from './control/control.controller';
+import mapLayer from './mapLayer/map.layer.directive';
+import MapLayerCtrl from './mapLayer/map.layer.controller';
+import vehicle from './vehicle/vehicle.directive';
+import VehicleCtrl from './vehicle/vehicle.controller';
+import MapService from './map/map.service';
+import StateService from './state.service';
+import VehicleService from './vehicle/vehicle.service';
 
 import '../style/app.css';
 
-let app = () => {
-  return {
-    template: require('./app.html'),
-    controller: 'AppCtrl',
-    controllerAs: 'app'
-  }
-};
-
-class AppCtrl {
-  constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
-  }
-}
-
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
-  .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
+let app = angular.module(MODULE_NAME, [])
+    .directive('map', map)
+    .directive('control', control)
+    .directive('vehicle', vehicle)
+    .directive('mapLayer', mapLayer)
+    .controller('MapCtrl', MapCtrl)
+    .controller('MapLayerCtrl', MapLayerCtrl)
+    .controller('ControlCtrl', ControlCtrl)
+    .controller('VehicleCtrl', VehicleCtrl)
+    .service('mapService', MapService)
+    .service('vehicleService', VehicleService)
+    .service('stateService', StateService);
 
-export default MODULE_NAME;
+export default app;
