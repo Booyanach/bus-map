@@ -1,0 +1,19 @@
+text.bus {
+  font-family: FontAwesome;
+  font-size: 9px;
+  fill: rgb(217,91,67);
+  opacity: 0.85;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: auto;					
+    height: 28px;					
+    padding: 5px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
