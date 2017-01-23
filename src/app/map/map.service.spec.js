@@ -17,7 +17,7 @@ describe('MapService:', () => {
 
     it('retrieve', () => {
         mapService.retrieve("foo", callbackSpy);
-        expect(d3.json).toHaveBeenCalledWith('/maps/foo.json', jasmine.any(Function));
+        expect(d3.json).toHaveBeenCalledWith('./maps/foo.json', jasmine.any(Function));
         expect(callbackSpy).toHaveBeenCalledWith(data);
     });
 });
