@@ -21,3 +21,5 @@ export default class VehicleService {
         });
     }
 }
+
+VehicleService.$inject = ['$rootScope'];
