@@ -1,0 +1,6 @@
+<svg>
+    <g map-layer ng-repeat="mapName in ::map.maps track by $index" 
+            svg="map.svg" path="map.path" map-name="{{::mapName}}">
+    </g>
+    <g vehicle routes="map.routes" projection="map.projection"></g>
+</svg>
